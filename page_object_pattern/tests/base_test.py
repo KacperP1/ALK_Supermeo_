@@ -12,7 +12,6 @@ class BaseTest(unittest.TestCase): #klasa bazowa każdego testu
         self.driver.implicitly_wait(5)
         self.home_page = HomePage(self.driver)
         self.home_page.click_cookis_accept()
-        sleep(5)
 
     def tearDown(self):
         self.driver.quit()

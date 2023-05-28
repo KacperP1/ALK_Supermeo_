@@ -25,7 +25,18 @@ class LogIn:
         loggin_buttom = (By.XPATH, "//button[text()='Zaloguj się']")
 
 class Logged:
-        get_acces_orange_buttom = (By.XPATH, '//a[@class="button button--orange" and text()=" Odblokuj dostęp "]')
+        get_acces_orange_buttom = (By.XPATH, '//a[@class="purchase-cta button button--orange" and @href="/pl/app/my-learning/catalog/course/37324" and text()=" Odblokuj dostęp "]')
+        unlock = (By.XPATH, "//a[@class='action-btn ng-star-inserted' and @href='/pl/app/order/payment/subscription?target=37324']")
+        catalog_buttom = (By.ID, "catalogTooltip")
+        course_language = (By.XPATH, '//button[@class="filter-btn ng-star-inserted"]//span[text()="Język kursu"]')
+        chinese = (By.XPATH, '//button[@class="filter-btn choose-option" and text()=" chiński "]')
+        apply = (By.XPATH, '//*[text()=" Zastosuj "]')
+        courses = (By.XPATH, '//*[@class="course"]')
+        more = (By.ID, 'more')
+        redeem_your_access_code = (By.CSS_SELECTOR, 'a[href="/pl/app/my-learning/more/code"]')
+        enter_your_access_code = (By.XPATH, '//input[@placeholder="Wpisz kod dostępu"]')
+        confirm_code = (By.XPATH, '//button[text()=" Zatwierdź "]')
+        incorrect_code = (By.XPATH, "//div[@class='warning ng-star-inserted' and contains(text(), ' Błędny kod ')]")
 class PaymentDetails:
         full_name = (By.XPATH, '//input[@placeholder="Imię i nazwisko"]')
         card_number = (By.XPATH, "//input[@placeholder='Numer karty']")

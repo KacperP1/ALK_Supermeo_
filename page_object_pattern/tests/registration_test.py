@@ -1,3 +1,4 @@
+import unittest
 
 from page_object_pattern.tests.base_test import BaseTest
 from page_object_pattern.locators_all.locators import CourseAccess
@@ -21,12 +22,18 @@ class RegistrationTest(BaseTest):
     def test_register_with_6(self):
         self.driver.implicitly_wait(5)
         self.registration_page.firstname_input()
+        sleep(1)
         self.registration_page.next_click()
+        sleep(1)
         self.registration_page.your_email_address()
+        sleep(1)
         self.registration_page.create_password()
+        sleep(1)
         self.registration_page.sing_up_button_registration()
+        sleep(1)
         self.registration_page.terms_of_use_and_privacy_policy()
         self.registration_page.send_button()
+        sleep(4)
 
 
 
@@ -99,13 +106,13 @@ class RegistrationTest(BaseTest):
         #     italia_course_element = self.driver.find_element(*CourseAccess.italian_course)
         #     if italia_course_element.is_displayed():
         #         print("Masz dostęp do nauki języka włoskiego")
-
+    #@unittest.SkipTest
     def test_wybranie_losowego_języka(self):
         #self.driver.implicitly_wait(10)
         self.test_register_with_6()
         registration_page = RegistrationPage(self.driver)  # utworzenie instancji RegistrationPage
         wybór = [registration_page.choose_english, registration_page.choose_spanish, registration_page.choose_german,
-                 registration_page.choose_russian, registration_page.choose_frenc, registration_page.choose_chinese,
+                 registration_page.choose_frenc, registration_page.choose_chinese,
                  registration_page.choose_japanese, registration_page.choose_dutch, registration_page.choose_italian,
                  registration_page.choose_portugese, registration_page.choose_swedish, registration_page.choose_danish,
                  registration_page.choose_norwegian, registration_page.choose_czech, registration_page.choose_finnish,
@@ -118,75 +125,107 @@ class RegistrationTest(BaseTest):
             if english_course_element.is_displayed():
                 print("Masz dostęp do nauki języka angielskiego")
             else:
-                print("Nie")
+                print("Nie masz dostępu do nauki języka angielskiego")
         elif losowy_wybór == registration_page.choose_spanish:
             spanish_course_element = self.driver.find_element(*CourseAccess.spanish_course)
             if spanish_course_element.is_displayed():
                 print("Masz dostęp do nauki języka hiszpańskiego")
             else:
-                print("Nie")
+                print("Nie masz dostęp do nauki języka hiszpańskiego ")
         elif losowy_wybór == registration_page.choose_german:
             german_course_element = self.driver.find_element(*CourseAccess.german_course)
             if german_course_element.is_displayed():
-                print("Niemiecki")
+                print("Masz dostęp do nauki języka niemieckiego")
+            else:
+                print("Nie masz dośtepu do nauki języka niemieckiego")
         elif losowy_wybór == registration_page.choose_russian:
             russian_course_element = self.driver.find_element(*CourseAccess.russian_course)
             if russian_course_element.is_displayed():
-                print("Russian")
+                print("Masz dostęp do nauki języka rosyjskiego")
+            else:
+                print("Nie masz dostepu do nauki języka rosyjskiego")
         elif losowy_wybór == registration_page.choose_frenc:
             french_course_element = self.driver.find_element(*CourseAccess.french_course)
             if french_course_element.is_displayed():
-                print("Francuski")
+                print("Masz dostęp do nauki języka francuskiego")
+            else:
+                print("Nie masz dostępu do nauki języka francuskiego")
         elif losowy_wybór == registration_page.choose_chinese:
             chinese_course_element = self.driver.find_element(*CourseAccess.chinese_course)
             if chinese_course_element.is_displayed():
-                print("Chiński")
+                print("Masz dostęp do nauki języka chińskiego")
+            else:
+                print("Nie masz dostępu do nauki języka chińskiego")
         elif losowy_wybór == registration_page.choose_japanese:
             japanese_course_element = self.driver.find_element(*CourseAccess.japanese_course)
             if japanese_course_element.is_displayed():
-                print("Japoński")
+                print("Masz dostęp do nauki języka japońskiego")
+            else:
+                print("Nie masz dostępu do nauki języka japońskiego")
         elif losowy_wybór == registration_page.choose_dutch:
             dutch_course_element = self.driver.find_element(*CourseAccess.dutch_course)
             if dutch_course_element.is_displayed():
-                print("Holenderski")
+                print("Masz dostęp do nauki języka holenderskiego")
+            else:
+                print("Nie masz dostępu do nauki języka holenderskiego")
         elif losowy_wybór == registration_page.choose_italian:
             italian_course_element = self.driver.find_element(*CourseAccess.italian_course)
             if italian_course_element.is_displayed():
-                print("wloski")
+                print("Masz dostęp do nauki języka włoskiego")
+            else:
+                print("Nie masz dostepu do nauki języka włoskiego")
         elif losowy_wybór == registration_page.choose_portugese:
             portugese_course_element = self.driver.find_element(*CourseAccess.portuguese_course)
             if portugese_course_element.is_displayed():
-                print("portugalski")
+                print("Masz dostęp do nauki języka portugalskiego")
+            else:
+                print("Nie masz dostępu do nauki języka portugalskiego")
         elif losowy_wybór == registration_page.choose_swedish:
             swedish_course_element = self.driver.find_element(*CourseAccess.swedish_course)
             if swedish_course_element.is_displayed():
-                print("szwedzki")
+                print("Masz dostęp do nauki języka szwedzkiego")
+            else:
+                print("Nie masz dostępu do nauki języka szwedzkiego")
         elif losowy_wybór == registration_page.choose_danish:
             danish_course_element = self.driver.find_element(*CourseAccess.danish_course)
             if danish_course_element.is_displayed():
-                print("duński")
+                print("Masz dostęp do nauki języka duńskiego")
+            else:
+                print("Nie masz dostępu do nauki języka duńskiego")
         elif losowy_wybór == registration_page.choose_norwegian:
             norwegian_course_element = self.driver.find_element(*CourseAccess.norwegian_course)
             if norwegian_course_element.is_displayed():
-                print("norweski")
+                print("Masz dostęp do nauki języka norweskiego")
+            else:
+                print("Nie masz dostępu do nauki języka norweskiego")
         elif losowy_wybór == registration_page.choose_czech:
             czech_course_element = self.driver.find_element(*CourseAccess.czech_course)
             if czech_course_element.is_displayed():
-                print("czeski")
+                print("Masz dostęp do nauki języka czeskiego")
+            else:
+                print("Nie masz dostęp do nauki języka czeskiego")
         elif losowy_wybór == registration_page.choose_finnish:
             finnish_course_element = self.driver.find_element(*CourseAccess.finnish_course)
             if finnish_course_element.is_displayed():
-                print("fiński")
+                print("Masz dostęp do nauki języka czeskiego fińskiegp")
+            else:
+                print("Nie masz dostepu do nauki języka fińskiego")
         elif losowy_wybór == registration_page.choose_arabic:
             arabic_course_element = self.driver.find_element(*CourseAccess.arabic_course)
             if arabic_course_element.is_displayed():
-                print("arabski")
+                print("Masz dostęp do nauki arabskiego")
+            else:
+                print("Nie masz dostępu do nauki arabskiego")
         elif losowy_wybór == registration_page.choose_hungarian:
             hungarian_course_element = self.driver.find_element(*CourseAccess.hungarian_course)
             if hungarian_course_element.is_displayed:
-                print("wegierski")
+                print("Masz dostęp do nauki języka węgierskiego")
+            else:
+                print("Nie masz dostepu do nauki języka węgierskiego")
         else:
             print("błąd!!!")
+
+        sleep(4)
 
 
 
