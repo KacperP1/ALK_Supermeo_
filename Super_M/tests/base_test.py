@@ -2,7 +2,7 @@
 from selenium import webdriver
 import unittest
 from page_object_pattern.pages.home_page import HomePage
-from time import sleep
+
 class BaseTest(unittest.TestCase): #klasa bazowa każdego testu
     def setUp(self): #warunki wstepne kazdego testu
         self.driver = webdriver.Chrome() #Korzystanie z przeglądarki homedriver

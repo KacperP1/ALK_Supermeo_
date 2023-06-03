@@ -2,6 +2,7 @@ import page_object_pattern.pages
 from page_object_pattern.pages import logged_page
 from page_object_pattern.tests.login_test import LoginTest
 from time import sleep
+from datetime import datetime
 
 class PaymentTest(LoginTest):
 
@@ -27,11 +28,13 @@ class PaymentTest(LoginTest):
         self.logged_page.cardholder_name()
         self.logged_page.start_your_free_month()
         sleep(2)
-        self.driver.save_screenshot("/Users/kacper/PycharmProjects/projekt_na_zaliczenie/page_object_pattern/screenshots/scr1.png")
+        now = str(datetime.now())
+        self.driver.save_screenshot(f"/Users/kacper/PycharmProjects/projekt_na_zaliczenie/page_object_pattern/screenshots/scr1{now}.png")
         sleep(2)
 
 
     def test_amount_of_available_courses(self):
+        self.driver.implicitly_wait(10)
         self.test_login_yourself()
         self.logged_page.catalog_of_courses_click()
         self.logged_page.click_course_language()

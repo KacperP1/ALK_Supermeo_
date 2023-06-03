@@ -22,7 +22,6 @@ class RegistrationTest(BaseTest):
     def test_register_with_6(self):
         self.driver.implicitly_wait(5)
         self.registration_page.firstname_input()
-        sleep(1)
         self.registration_page.next_click()
         sleep(1)
         self.registration_page.your_email_address()
