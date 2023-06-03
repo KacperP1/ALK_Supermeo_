@@ -4,7 +4,7 @@ from Supermemo_project.tests.login_test import LoginTest
 from datetime import datetime
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from time import sleep
+
 
 class PaymentTest(LoginTest):
 
@@ -68,5 +68,4 @@ class PaymentTest(LoginTest):
         self.logged_page.log_out()
         expected_url = "https://learn.supermemo.com/pl/authorization/v2/entry?returnUrl=%2Fpl%2Fapp"
         WebDriverWait(self.driver, 10).until(EC.url_to_be(expected_url))
-        assert self.driver.current_url == expected_url#, #f"Expected URL after logout: {expected_url}, but got: {self.driver.current_url}"
-
+        assert self.driver.current_url == expected_url

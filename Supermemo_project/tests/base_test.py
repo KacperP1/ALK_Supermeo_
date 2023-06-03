@@ -3,10 +3,9 @@ from selenium import webdriver
 import unittest
 from Supermemo_project.pages.home_page import HomePage
 
-class BaseTest(unittest.TestCase): #klasa bazowa każdego testu
-    def setUp(self): #warunki wstepne kazdego testu
-        self.driver = webdriver.Chrome() #Korzystanie z przeglądarki homedriver
-        #self.driver.implicitly_wait(5)
+class BaseTest(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.get("https://www.supermemo.com/pl")
         self.driver.implicitly_wait(5)
